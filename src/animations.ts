@@ -49,18 +49,21 @@ export function animateColor(
 
 export function animateRotation(
   rotateBox: HTMLDivElement,
+  startRotation: number,
   endRotation: number,
   speed: number
 ) {
-  let rotateT = 0;
+  let rotationT = 0;
 
   function rotate() {
-    rotateT += speed;
-    if (rotateT > endRotation) rotateT = endRotation;
+    rotationT += speed; // Increment progress
+    if (rotationT > 1) rotationT = 1;
 
-    rotateBox.style.transform = `rotate(${rotateT}deg)`;
+    const currentRotation = lerp(startRotation, endRotation, rotationT);
+    rotateBox.style.transform = `rotate(${currentRotation}deg)`;
 
-    if (rotateT === endRotation) {
+    // Unregister task once the animation completes
+    if (rotationT === 1) {
       animationManager.unregisterTask(rotate);
     }
   }
