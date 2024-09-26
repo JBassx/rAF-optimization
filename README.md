@@ -2,6 +2,10 @@
 
 A demo created for the article "Supercharge Your Web Animations: Optimize requestAnimationFrame Like a Pro".
 
+## Stackblitz
+
+https://stackblitz.com/~/github.com/JBassx/rAF-optimization
+
 ## Getting Started
 
 This project uses Vite for fast development and build. Follow the steps below to set up the project locally.
